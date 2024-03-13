@@ -3,7 +3,7 @@
 ##########################################################################################################################
 # Script: ThinkInstallF
 # Autor: ThinkRoot
-# Versiune: 2.1
+# Versiune: 2.2
 
 # Descriere: 
 #   Acest script automatizează procesul de instalare a unui set de programe și dependințe pe un sistem Fedora.
@@ -25,53 +25,53 @@ fi
 
 # Actualizare sistem
 echo "Actualizare sistem..."
-sudo dnf upgrade --refresh
+sudo dnf upgrade --refresh -y
 
 # Instalare rpmfusion
 echo "Instalare rpmfusion..."
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpp -y
 
 # Instalare depozit openh264
 echo "Instalare depozit openh264..."
-sudo dnf config-manager --enable fedora-cisco-openh264
+sudo dnf config-manager --enable fedora-cisco-openh264 -y
 
 # Instalare multimedia
 echo "Instalare multimedia..."
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-sudo dnf groupupdate multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo dnf groupupdate sound-and-video
-sudo dnf install rpmfusion-free-release-tainted
-sudo dnf install libdvdcss
-sudo dnf install vlc-plugins-freeworld
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
+sudo dnf groupupdate multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
+sudo dnf groupupdate sound-and-video -y
+sudo dnf install rpmfusion-free-release-tainted -y
+sudo dnf install libdvdcss -y
+sudo dnf install vlc-plugins-freeworld -y
 
 # Instalare drivere pentru Intel
 echo "Instalare drivere pentru Intel..."
-sudo dnf install intel-media-driver
-sudo dnf install libva-intel-driver
+sudo dnf install intel-media-driver -y
+sudo dnf install libva-intel-driver -y
 
 # Instalare Firmware
 echo "Instalare Firmware..."
-sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
+sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware" -y
 
 # Actualizare sistem
 echo "Actualizare sistem..."
-sudo dnf upgrade --refresh
+sudo dnf upgrade --refresh -y
 
 # Instalare programe rpm
 echo "Instalare programe rpm..."
-sudo dnf install gnome-tweak gimp gimp-data-extras gimp-elsamuko gimp-paint-studio gimp-resynthesizer gimpfx-foundry gmic-gimp gimp-jxl-plugin libreoffice libreoffice-calc libreoffice-core libreoffice-data libreoffice-emailmerge libreoffice-gtk3 libreoffice-gtk4 libreoffice-impress libreoffice-pdfimport libreoffice-writer kdenlive obs-studio obs-studio-plugin-vkcapture obs-studio-plugin-vlc-video obs-studio-plugin-webkitgtk obs-studio-plugin-x264 vlc vlc-extras telegram-desktop discord filezilla polari qbittorrent gparted apostrophe file-roller pdfarranger rpi-imager git neofetch htop yt-dlp pandoc
+sudo dnf install gnome-tweak gimp gimp-data-extras gimp-elsamuko gimp-paint-studio gimp-resynthesizer gimpfx-foundry gmic-gimp gimp-jxl-plugin libreoffice libreoffice-calc libreoffice-core libreoffice-data libreoffice-emailmerge libreoffice-gtk3 libreoffice-gtk4 libreoffice-impress libreoffice-pdfimport libreoffice-writer kdenlive obs-studio obs-studio-plugin-vkcapture obs-studio-plugin-vlc-video obs-studio-plugin-webkitgtk obs-studio-plugin-x264 vlc vlc-extras telegram-desktop discord filezilla polari qbittorrent gparted apostrophe file-roller pdfarranger rpi-imager git neofetch htop yt-dlp pandoc -y
 
 # Instalare programe flatpak
 echo "Instalare programe flatpak..."
-flatpak install flathub com.github.gijsgoudzwaard.image-optimizer org.nickvision.tubeconverter com.spotify.Client io.gitlab.adhami3310.Converter eu.betterbird.Betterbird one.ablaze.floorp com.microsoft.Edge io.gitlab.librewolf-community com.microsoft.Edge com.github.eneshecan.WhatsAppForLinux org.gnome.World.PikaBackup org.gnome.World.Iotas com.bitwarden.desktop io.github.shiftey.Desktop io.github.zhrexl.thisweekinmylife
+flatpak install flathub com.github.gijsgoudzwaard.image-optimizer org.nickvision.tubeconverter com.spotify.Client io.gitlab.adhami3310.Converter eu.betterbird.Betterbird one.ablaze.floorp com.microsoft.Edge io.gitlab.librewolf-community com.microsoft.Edge com.github.eneshecan.WhatsAppForLinux org.gnome.World.PikaBackup org.gnome.World.Iotas com.bitwarden.desktop io.github.shiftey.Desktop io.github.zhrexl.thisweekinmylife -y
 
 # Instalare extensii pentru GNOME
 echo "Instalare extensii pentru GNOME..."
-sudo dnf install gnome-shell-extension-user-theme gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock gnome-shell-extension-blur-my-shell
+sudo dnf install gnome-shell-extension-user-theme gnome-shell-extension-appindicator gnome-shell-extension-dash-to-dock gnome-shell-extension-blur-my-shell -y
 
 # Instalare teme
 echo "Instalare teme..."
-sudo dnf install adwaita-blue-gtk-theme adwaita-cursor-theme adwaita-icon-theme gnome-shell-theme-yaru yaru-gtk3-theme yaru-gtk4-theme yaru-icon-theme yaru-sound-theme yaru-theme la-capitaine-cursor-theme gnome-themes-extra
+sudo dnf install adwaita-blue-gtk-theme adwaita-cursor-theme adwaita-icon-theme gnome-shell-theme-yaru yaru-gtk3-theme yaru-gtk4-theme yaru-icon-theme yaru-sound-theme yaru-theme la-capitaine-cursor-theme gnome-themes-extra -y
 
 echo "Instalarea a fost finalizată cu succes!"
 
