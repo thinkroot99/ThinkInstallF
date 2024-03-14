@@ -3,7 +3,7 @@
 ##########################################################################################################################
 # Script: ThinkInstallF
 # Autor: ThinkRoot
-# Versiune: 2.3
+# Versiune: 2.4
 
 # Descriere: 
 #   Acest script automatizează procesul de instalare a unui set de programe și dependințe pe un sistem Fedora.
@@ -63,7 +63,7 @@ sudo dnf upgrade --refresh -y
 
 # Instalare programe rpm
 echo "Instalare programe rpm..."
-sudo dnf install gnome-tweak gimp gimp-data-extras gimp-elsamuko gimp-paint-studio gimp-resynthesizer gimpfx-foundry gmic-gimp gimp-jxl-plugin libreoffice libreoffice-calc libreoffice-core libreoffice-data libreoffice-emailmerge libreoffice-gtk3 libreoffice-gtk4 libreoffice-impress libreoffice-pdfimport libreoffice-writer kdenlive obs-studio obs-studio-plugin-vkcapture obs-studio-plugin-vlc-video obs-studio-plugin-webkitgtk obs-studio-plugin-x264 vlc vlc-extras telegram-desktop discord filezilla polari qbittorrent gparted apostrophe file-roller pdfarranger rpi-imager git neofetch htop yt-dlp pandoc -y
+sudo dnf install gnome-tweaks gimp gimp-data-extras gimp-elsamuko gimp-paint-studio gimp-resynthesizer gimpfx-foundry gmic-gimp gimp-jxl-plugin libreoffice libreoffice-calc libreoffice-core libreoffice-data libreoffice-emailmerge libreoffice-gtk3 libreoffice-gtk4 libreoffice-impress libreoffice-pdfimport libreoffice-writer kdenlive obs-studio obs-studio-plugin-vkcapture obs-studio-plugin-vlc-video obs-studio-plugin-webkitgtk obs-studio-plugin-x264 vlc vlc-extras telegram-desktop discord filezilla polari qbittorrent gparted apostrophe file-roller pdfarranger rpi-imager git neofetch htop yt-dlp pandoc -y
 
 # Instalare programe flatpak
 echo "Instalare programe flatpak..."
