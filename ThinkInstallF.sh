@@ -3,7 +3,7 @@
 ##########################################################################################################################
 # Script: ThinkInstallF
 # Autor: ThinkRoot
-# Versiune: 2.2
+# Versiune: 2.3
 
 # Descriere: 
 #   Acest script automatizează procesul de instalare a unui set de programe și dependințe pe un sistem Fedora.
@@ -34,6 +34,10 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 # Instalare depozit openh264
 echo "Instalare depozit openh264..."
 sudo dnf config-manager --enable fedora-cisco-openh264 -y
+
+# Actualizare sistem
+echo "Actualizare sistem..."
+sudo dnf upgrade --refresh -y
 
 # Instalare multimedia
 echo "Instalare multimedia..."
@@ -72,6 +76,10 @@ sudo dnf install gnome-shell-extension-user-theme gnome-shell-extension-appindic
 # Instalare teme
 echo "Instalare teme..."
 sudo dnf install adwaita-blue-gtk-theme adwaita-cursor-theme adwaita-icon-theme gnome-shell-theme-yaru yaru-gtk3-theme yaru-gtk4-theme yaru-icon-theme yaru-sound-theme yaru-theme la-capitaine-cursor-theme gnome-themes-extra -y
+
+# Actualizare sistem
+echo "Actualizare sistem..."
+sudo dnf upgrade --refresh -y
 
 echo "Instalarea a fost finalizată cu succes!"
 
